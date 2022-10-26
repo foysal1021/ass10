@@ -10,11 +10,10 @@ const Catagory = () => {
       .then((res) => res.json())
       .then((data) => setCotagoris(data));
   }, []);
-  console.log("ok", catagoris);
+  // console.log("ok", catagoris);
 
   return (
     <div>
-      <h1> Catagory {catagoris.length} </h1>
       {catagoris.map((catagori) => (
         <div>
           <Button className=" btn-dark">
@@ -26,6 +25,10 @@ const Catagory = () => {
           </Button>
         </div>
       ))}
+      <Button className=" btn-dark">
+        {" "}
+        <Link to="/">All Catagory</Link>{" "}
+      </Button>
     </div>
   );
 };
