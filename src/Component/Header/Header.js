@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [them,setThem]=useState(true);
@@ -44,6 +45,8 @@ const Header = () => {
             </Nav.Link>{/* dark and light mode btn end */}
                        
             <Nav.Link href="#deets"> Photo </Nav.Link>
+            <Nav.Link href="#deets" > <Link to='/login'> Login </Link>  </Nav.Link>
+            <Nav.Link href="#deets"> <Link to='register'> Register  </Link>  </Nav.Link>
 
 
           </Nav>
