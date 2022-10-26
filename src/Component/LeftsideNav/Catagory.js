@@ -16,19 +16,19 @@ const Catagory = () => {
     <div>
       {catagoris.map((catagori) => (
         <div>
-          <Button className=" btn-dark">
-            {" "}
-            <Link to={`/catagory/details/${catagori.id}`}>
-              {" "}
+          <Link
+            className=" text-decoration-none text-light fs-5"
+            to={`/catagory/details/${catagori.id}`}
+          >
+            <Button className=" btn-primary w-75 my-2 py-3 ">
               {catagori.catagory}{" "}
-            </Link>
-          </Button>
+            </Button>{" "}
+          </Link>
         </div>
-      ))}
-      <Button className=" btn-dark">
-        {" "}
-        <Link to="/">All Catagory</Link>{" "}
-      </Button>
+      ))}{" "}
+      <Link className=" text-decoration-none text-light fs-5" to="/">
+        <Button className=" btn-primary w-75 my-2 py-3"> All Catagory </Button>
+      </Link>{" "}
     </div>
   );
 };
