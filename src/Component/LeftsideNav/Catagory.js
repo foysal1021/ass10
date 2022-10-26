@@ -13,9 +13,9 @@ const Catagory = () => {
   // console.log("ok", catagoris);
 
   return (
-    <div>
+    <div className="text-center">
       {catagoris.map((catagori) => (
-        <div>
+        <div className=" text-center">
           <Link
             className=" text-decoration-none text-light fs-5"
             to={`/catagory/details/${catagori.id}`}
