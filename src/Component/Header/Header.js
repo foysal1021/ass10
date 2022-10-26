@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 const Header = () => {
+  const [them,setThem]=useState(true);
+
+  //set dark and light mode start
+  const lightThem = ()=>{
+    setThem(false);
+  }
+
+  const darkThem = ()=>{
+    setThem(true)
+  }
+
+  //set dark and light mode end
+
+
+
     return (
         <div>
              <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -19,7 +34,15 @@ const Header = () => {
           </Nav>
 
           <Nav>
-            <Nav.Link href="#deets"> Dark/light </Nav.Link>
+            {/* dark and light mode btn start */}
+            <Nav.Link href="#deets">
+              {
+                them?<span onClick={lightThem}> Light </span>:
+                <span onClick={darkThem}> Dark </span>
+
+              }
+            </Nav.Link>{/* dark and light mode btn end */}
+                       
             <Nav.Link href="#deets"> Photo </Nav.Link>
 
 
