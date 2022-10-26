@@ -10,7 +10,6 @@ const Catagory = () => {
       .then((res) => res.json())
       .then((data) => setCotagoris(data));
   }, []);
-
   console.log("ok", catagoris);
 
   return (
@@ -19,7 +18,11 @@ const Catagory = () => {
       {catagoris.map((catagori) => (
         <div>
           <Button className=" btn-dark">
-            <Link to={``}> {catagori.catagory} </Link>
+            {" "}
+            <Link to={`/catagory/details/${catagori.id}`}>
+              {" "}
+              {catagori.catagory}{" "}
+            </Link>
           </Button>
         </div>
       ))}
