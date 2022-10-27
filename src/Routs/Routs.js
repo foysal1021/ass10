@@ -1,9 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
+import BuyNow from "../Component/BuyNow/BuyNow";
 import Home from "../Component/Home/Home";
 import CatagoryDetails from "../Component/LeftsideNav/CatagoryDetails";
 import Login from "../Component/Login/Login";
 import Register from "../Component/Register/Register";
 import Main from "../Layout/Main/Main";
+import PrivateRouts from "./PrivateRouts";
 
 export const routs = createBrowserRouter([
   {
@@ -32,6 +34,14 @@ export const routs = createBrowserRouter([
         loader: ({ params }) => {
           return fetch(`https://server-two-xi.vercel.app/course/${params.id}`);
         },
+      },
+      {
+        path: "/buy-now",
+        element: (
+          <PrivateRouts>
+            <BuyNow></BuyNow>
+          </PrivateRouts>
+        ),
       },
     ],
   },

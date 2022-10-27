@@ -1,40 +1,50 @@
 import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import "./Login.css";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
-const Login = () => {
-  const { userSinging, GoogleSINGIN, GithubSINGIN } = useContext(AuthContext);
 
+const Login = () => {
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+  const { userSinging, GoogleSINGIN, GithubSINGIN } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
   const GithubProvider = new GithubAuthProvider();
+  const navigate = useNavigate();
 
   const login = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    // singing with email password
-    // singing with email password
+    // singing with email password start
     userSinging(email, password)
       .then((regult) => {
         const user = regult.user;
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);
       });
   };
+  // singing with email password end
+
+  // google singing start
   const google = () => {
     GoogleSINGIN(googleProvider);
+    navigate(from, { replace: true });
   };
-
+  // google singing end
+  // github login start
   const gitHtub = () => {
     GithubSINGIN(GithubProvider);
+    navigate(from, { replace: true });
   };
+  // github login end
 
   return (
     <div>

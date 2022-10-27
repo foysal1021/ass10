@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import toast, { Toaster } from "react-hot-toast";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const Register = () => {
@@ -61,7 +62,6 @@ const Register = () => {
             required
           />
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicFullName">
           <Form.Label> Full Name </Form.Label>
           <Form.Control
@@ -71,7 +71,6 @@ const Register = () => {
             required
           />
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicPhotoURL">
           <Form.Label> Photo URL </Form.Label>
           <Form.Control
@@ -81,7 +80,6 @@ const Register = () => {
             placeholder="Enter Photo URL"
           />
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
@@ -91,11 +89,17 @@ const Register = () => {
             required
           />
         </Form.Group>
-
-        {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group> */}
-
+        <span>
+          <Form.Label> Already have an accout? </Form.Label>{" "}
+          <Link
+            to="/login"
+            className=" text-decoration-none fw-bold text-success"
+          >
+            {" "}
+            Login{" "}
+          </Link>
+        </span>{" "}
+        <br></br>
         <Button variant="primary" type="submit">
           Register
         </Button>

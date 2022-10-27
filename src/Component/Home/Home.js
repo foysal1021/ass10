@@ -6,7 +6,6 @@ import "./Home.css";
 
 const Home = () => {
   const allCourse = useLoaderData();
-  // console.log(allCourse);
   return (
     <div className="ok">
       <div className=" row mt-4 ">
@@ -26,7 +25,10 @@ const Home = () => {
                   {" "}
                   <Button className=" bg-primary t">
                     {" "}
-                    <Link className=" text-decoration-none text-light">
+                    <Link
+                      to="/buy-now"
+                      className=" text-decoration-none text-light"
+                    >
                       {" "}
                       Buy Now{" "}
                     </Link>

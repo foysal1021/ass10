@@ -26,9 +26,6 @@ const Catagory = () => {
           </Link>
         </div>
       ))}{" "}
-      <Link className=" text-decoration-none text-light fs-5" to="/">
-        <Button className=" btn-primary w-75 my-2 py-3"> All Catagory </Button>
-      </Link>{" "}
     </div>
   );
 };

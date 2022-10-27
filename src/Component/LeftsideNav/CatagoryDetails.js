@@ -22,7 +22,7 @@ const CatagoryDetails = () => {
             {" "}
             <Button className=" bg-primary t">
               {" "}
-              <Link className=" text-decoration-none text-light">
+              <Link to="/buy-now" className=" text-decoration-none text-light">
                 {" "}
                 Buy Now{" "}
               </Link>
@@ -39,23 +39,3 @@ const CatagoryDetails = () => {
 };
 
 export default CatagoryDetails;
-
-// <Card className=" h-100 text-center">
-//   <Card.Header className=" bg-primary p-4">
-//     <Image src={img} className="w-100 rounded"></Image>
-//   </Card.Header>
-
-//   <Card.Footer className="text-muted d-flex justify-content-between align-items-center">
-//     <div>
-//       {" "}
-//       <Button className=" bg-primary t">
-//         {" "}
-//         <Link className=" text-decoration-none text-light"> Buy Now </Link>
-//       </Button>
-//     </div>
-//     <div>
-//       {" "}
-//       <span> ${course.price}</span>{" "}
-//     </div>
-//   </Card.Footer>
-// </Card>;
