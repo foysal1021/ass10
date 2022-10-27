@@ -6,7 +6,7 @@ import "./Home.css";
 
 const Home = () => {
   const allCourse = useLoaderData();
-  console.log(allCourse);
+  // console.log(allCourse);
   return (
     <div className="ok">
       <div className=" row mt-4 ">

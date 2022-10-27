@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const Register = () => {
+  const { userRegister, userVerifi, userProfileUpdated } =
+    useContext(AuthContext);
+
   const register = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -12,7 +16,36 @@ const Register = () => {
     const photoURL = form.photoURL.value;
     const password = form.password.value;
 
-    console.log(email, name, photoURL, password);
+    // user create start
+    userRegister(email, password)
+      .then((regult) => {
+        const user = regult.user;
+        console.log(user);
+        // verifi user
+        userVerifi()
+          .then((regult) => {
+            const user = regult.user;
+            console.log(user);
+          })
+          .catch();
+        // verifi user end
+
+        // updated profile name img start
+        updated(name, photoURL);
+        // updated profile name img start
+      })
+      .catch((error) => console.error(error));
+  }; // user create end
+
+  const updated = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+
+    userProfileUpdated(profile)
+      .then(() => {})
+      .catch(() => {});
   };
 
   return (

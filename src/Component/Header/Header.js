@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [them, setThem] = useState(true);
-
   //set dark and light mode start
   const lightThem = () => {
     setThem(false);
@@ -45,7 +44,7 @@ const Header = () => {
               </Nav.Link>
               {/* dark and light mode btn end */}
 
-              <Nav.Link href="#deets"> Photo </Nav.Link>
+              <Nav.Link href="#deets"> foysal</Nav.Link>
               <Nav.Link href="#deets">
                 {" "}
                 <Link to="/login"> Login </Link>{" "}
