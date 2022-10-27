@@ -1,6 +1,10 @@
 # project details
 
-server side github link [https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-foysal1021](https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-foysal1021).
+server side github link
+[https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-foysal1021](https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-foysal1021)
+
+client side github link
+[https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-foysal1021](https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-foysal1021)
 
 ## Available Scripts
 
