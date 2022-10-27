@@ -50,7 +50,8 @@ const Register = () => {
 
   return (
     <div>
-      <Form onSubmit={register} className=" bg-info p-3 mt-3 rounded">
+      <Form onSubmit={register} className=" p-5 form-style mt-3 rounded-4">
+        <h2 className=" text-center text-primary fw-bolder"> Register Here </h2>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control

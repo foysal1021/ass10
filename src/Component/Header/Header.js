@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+import "./Header.css";
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
@@ -36,7 +37,10 @@ const Header = () => {
             <Nav className="me-auto">
               <Nav.Link href="#features">
                 {" "}
-                <Link to="/"> Courses </Link>{" "}
+                <Link to="/" className=" text-decoration-none">
+                  {" "}
+                  Courses{" "}
+                </Link>{" "}
               </Nav.Link>
               <Nav.Link href="#pricing">FAQ</Nav.Link>
               <Nav.Link href="#pricing">Blog</Nav.Link>
@@ -55,18 +59,28 @@ const Header = () => {
               <span>
                 {user?.uid ? (
                   <span className=" d-flex">
-                    <Nav.Link> foysla </Nav.Link>
+                    <Nav.Link>
+                      {" "}
+                      <Image
+                        className="  rounded-circle user-img"
+                        src={user?.photoURL}
+                      ></Image>{" "}
+                    </Nav.Link>
                     <Nav.Link onClick={Userlogout}> Logout </Nav.Link>
                   </span>
                 ) : (
                   <span className=" d-flex">
                     <Nav.Link>
                       {" "}
-                      <Link to="/login">Login</Link>{" "}
+                      <Link to="/login" className=" text-decoration-none">
+                        Login
+                      </Link>{" "}
                     </Nav.Link>
                     <Nav.Link>
                       {" "}
-                      <Link to="/register">Register</Link>{" "}
+                      <Link to="/register" className=" text-decoration-none">
+                        Register
+                      </Link>{" "}
                     </Nav.Link>
                   </span>
                 )}

@@ -5,6 +5,7 @@ import {
   onAuthStateChanged,
   sendEmailVerification,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -12,6 +13,7 @@ import app from "../../Firebase/Firebase.init";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
+// const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState();
@@ -46,6 +48,12 @@ const AuthProvider = ({ children }) => {
   };
   // logout end
 
+  // singin with google start
+  const GoogleSINGIN = (provider) => {
+    return signInWithPopup(auth, provider);
+  };
+  // singin with google end
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -62,6 +70,7 @@ const AuthProvider = ({ children }) => {
     userProfileUpdated,
     userSinging,
     logout,
+    GoogleSINGIN,
   };
   return (
     <AuthContext.Provider value={Authinfo}>{children}</AuthContext.Provider>
