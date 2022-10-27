@@ -1,6 +1,6 @@
 # project details
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+server side github link [https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-foysal1021](https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-foysal1021).
 
 ## Available Scripts
 
