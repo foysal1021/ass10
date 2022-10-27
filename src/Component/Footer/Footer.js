@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className=" container-fluid bg-primary">
+    <div className=" container-fluid bg-primary mt-5">
       <div className="  p-5 text-light container">
         <h3> Grow your career</h3>
         <h4> Start Learning With FOYSAL AHAMED Academy</h4>
