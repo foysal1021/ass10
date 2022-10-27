@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import "./Login.css";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 const Login = () => {
-  const { userSinging, GoogleSINGIN } = useContext(AuthContext);
+  const { userSinging, GoogleSINGIN, GithubSINGIN } = useContext(AuthContext);
 
   const googleProvider = new GoogleAuthProvider();
+  const GithubProvider = new GithubAuthProvider();
 
   const login = (event) => {
     event.preventDefault();
@@ -29,6 +30,10 @@ const Login = () => {
   };
   const google = () => {
     GoogleSINGIN(googleProvider);
+  };
+
+  const gitHtub = () => {
+    GithubSINGIN(GithubProvider);
   };
 
   return (
@@ -67,7 +72,10 @@ const Login = () => {
             Google{" "}
           </button>{" "}
           <br></br>
-          <button className=" w-50 py-3 fs-5 githubLogin"> Github </button>
+          <button onClick={gitHtub} className=" w-50 py-3 fs-5 githubLogin">
+            {" "}
+            <FaGithub></FaGithub> Github{" "}
+          </button>
         </div>
       </Form>{" "}
     </div>

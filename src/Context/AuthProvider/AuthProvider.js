@@ -54,6 +54,12 @@ const AuthProvider = ({ children }) => {
   };
   // singin with google end
 
+  // github singing start
+  const GithubSINGIN = (provider) => {
+    return signInWithPopup(auth, provider);
+  };
+  // github singing start
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -71,6 +77,7 @@ const AuthProvider = ({ children }) => {
     userSinging,
     logout,
     GoogleSINGIN,
+    GithubSINGIN,
   };
   return (
     <AuthContext.Provider value={Authinfo}>{children}</AuthContext.Provider>
