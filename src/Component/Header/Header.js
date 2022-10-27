@@ -42,7 +42,10 @@ const Header = () => {
                   Courses{" "}
                 </Link>{" "}
               </Nav.Link>
-              <Nav.Link href="#pricing">FAQ</Nav.Link>
+              <Nav.Link href="#pricing">
+                {" "}
+                <Link to="/FAQ"> FAQ </Link>
+              </Nav.Link>
               <Nav.Link href="#pricing">
                 {" "}
                 <Link to="/blog"> Blog </Link>
