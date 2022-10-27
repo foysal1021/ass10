@@ -6,10 +6,12 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 import "./Header.css";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
-  console.log("user", user?.photoURL);
+  console.log("user", user?.displayName);
 
   const [them, setThem] = useState(true);
   //set dark and light mode start
@@ -82,13 +84,15 @@ const Header = () => {
               <span>
                 {user?.uid ? (
                   <span className=" d-flex">
-                    <Nav.Link>
-                      {" "}
-                      <Image
-                        className="  rounded-circle user-img"
-                        src={user?.photoURL}
-                      ></Image>{" "}
-                    </Nav.Link>
+                    <Tippy content={user?.displayName}>
+                      <Nav.Link>
+                        <Image
+                          className="  rounded-circle user-img"
+                          src={user?.photoURL}
+                        ></Image>{" "}
+                      </Nav.Link>
+                    </Tippy>
+
                     <Nav.Link onClick={Userlogout}> Logout </Nav.Link>
                   </span>
                 ) : (
