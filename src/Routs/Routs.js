@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Blog from "../Component/Blog/Blog";
 import BuyNow from "../Component/BuyNow/BuyNow";
 import Home from "../Component/Home/Home";
 import CatagoryDetails from "../Component/LeftsideNav/CatagoryDetails";
@@ -42,6 +43,10 @@ export const routs = createBrowserRouter([
             <BuyNow></BuyNow>
           </PrivateRouts>
         ),
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
     ],
   },
