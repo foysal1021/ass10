@@ -30,25 +30,42 @@ const Header = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home"> Foysal Ahamed </Navbar.Brand>
+          <Navbar.Brand href="#home">
+            <Link
+              className=" d-flex align-items-center text-decoration-none"
+              to="/"
+            >
+              <Image
+                className=" logo rounded"
+                src="https://i.ibb.co/L5NpvZD/Screenshot-1.png"
+              ></Image>
+              <h5 className=" text-light ms-1 m-0"> FOYSAL AHAMED</h5>
+            </Link>
+          </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#features">
                 {" "}
-                <Link to="/" className=" text-decoration-none">
+                <Link to="/" className=" text-decoration-none text-light">
                   {" "}
                   Courses{" "}
                 </Link>{" "}
               </Nav.Link>
               <Nav.Link href="#pricing">
                 {" "}
-                <Link to="/FAQ"> FAQ </Link>
+                <Link to="/FAQ" className=" text-decoration-none text-light">
+                  {" "}
+                  FAQ{" "}
+                </Link>
               </Nav.Link>
               <Nav.Link href="#pricing">
                 {" "}
-                <Link to="/blog"> Blog </Link>
+                <Link to="/blog" className=" text-decoration-none text-light">
+                  {" "}
+                  Blog{" "}
+                </Link>
               </Nav.Link>
             </Nav>
 
@@ -78,13 +95,19 @@ const Header = () => {
                   <span className=" d-flex">
                     <Nav.Link>
                       {" "}
-                      <Link to="/login" className=" text-decoration-none">
+                      <Link
+                        to="/login"
+                        className=" text-decoration-none text-light"
+                      >
                         Login
                       </Link>{" "}
                     </Nav.Link>
                     <Nav.Link>
                       {" "}
-                      <Link to="/register" className=" text-decoration-none">
+                      <Link
+                        to="/register"
+                        className=" text-decoration-none text-light"
+                      >
                         Register
                       </Link>{" "}
                     </Nav.Link>
