@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import toast, { Toaster } from "react-hot-toast";
@@ -8,11 +8,12 @@ import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 const Register = () => {
   const { userRegister, userVerifi, userProfileUpdated } =
     useContext(AuthContext);
+  const [error, seterror] = useState();
 
   const register = (event) => {
     event.preventDefault();
-    const form = event.target;
 
+    const form = event.target;
     const email = form.email.value;
     const name = form.name.value;
     const photoURL = form.photoURL.value;
@@ -23,6 +24,7 @@ const Register = () => {
       .then((regult) => {
         const User = regult.user;
         console.log(User);
+
         // verifi user
         userVerifi()
           .then(() => {
@@ -35,7 +37,10 @@ const Register = () => {
         updated(name, photoURL);
         // updated profile name img start
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        const errorMessage = error.message;
+        seterror(errorMessage);
+      });
   }; // user create end
 
   const updated = (name, photoURL) => {
@@ -100,7 +105,8 @@ const Register = () => {
           </Link>
         </span>{" "}
         <br></br>
-        <Button variant="primary" type="submit">
+        <span className=" text-danger">{error}</span> <br></br>
+        <Button className=" mt-2" variant="primary" type="submit">
           Register
         </Button>
       </Form>

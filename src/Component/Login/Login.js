@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -6,6 +6,7 @@ import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import "./Login.css";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const location = useLocation();
@@ -14,6 +15,7 @@ const Login = () => {
   const googleProvider = new GoogleAuthProvider();
   const GithubProvider = new GithubAuthProvider();
   const navigate = useNavigate();
+  const [error, setError] = useState();
 
   const login = (event) => {
     event.preventDefault();
@@ -28,7 +30,8 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.error(error);
+        const errorMessage = error.message;
+        setError(errorMessage);
       });
   };
   // singing with email password end
@@ -73,7 +76,12 @@ const Login = () => {
           </Link>
         </span>{" "}
         <br></br>
-        <Button variant="primary" type="submit" className=" px-5 py-2 fs-5">
+        <span className=" text-danger"> {error} </span> <br></br>
+        <Button
+          variant="primary"
+          type="submit"
+          className=" px-5 py-2 fs-5 mt-2"
+        >
           Login{" "}
         </Button>{" "}
         <div className=" text-center mt-5 ">

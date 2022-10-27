@@ -53,6 +53,10 @@ export const routs = createBrowserRouter([
         path: "/FAQ",
         element: <Faq></Faq>,
       },
+      {
+        path: "*",
+        element: <h1> page not found </h1>,
+      },
     ],
   },
 ]);

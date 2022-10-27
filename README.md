@@ -1,14 +1,13 @@
 # project details
 
-server side github link
+1 . server side github link
 [https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-foysal1021](https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-foysal1021)
 
-client side github link
+2 . client side github link
 [https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-foysal1021](https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-foysal1021)
 
-## Available Scripts
-
-In the project directory, you can run:
+2 . Live Link
+[https://assignment-10-db286.web.app](https://assignment-10-db286.web.app)
 
 ### `npm start`
 
